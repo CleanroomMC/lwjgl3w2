@@ -18,16 +18,12 @@ public class ARBBufferObject {
             GL_DYNAMIC_READ_ARB = 0x88E9,
             GL_DYNAMIC_COPY_ARB = 0x88EA;
 
-    /**
-     * Accepted by the &lt;access&gt; parameter of MapBufferARB:
-     */
+
     public static final int GL_READ_ONLY_ARB = 0x88B8,
             GL_WRITE_ONLY_ARB = 0x88B9,
             GL_READ_WRITE_ARB = 0x88BA;
 
-    /**
-     * Accepted by the &lt;pname&gt; parameter of GetBufferParameterivARB:
-     */
+
     public static final int GL_BUFFER_SIZE_ARB = 0x8764,
             GL_BUFFER_USAGE_ARB = 0x8765,
             GL_BUFFER_ACCESS_ARB = 0x88BB,
@@ -45,7 +41,7 @@ public class ARBBufferObject {
     }
     static native void nglDeleteBuffersARB(int buffers_n, long buffers, long function_pointer);
 
-    /** Overloads glDeleteBuffersARB. */
+
     public static void glDeleteBuffersARB(int buffer) {
         ARBVertexBufferObject.glDeleteBuffersARB(buffer);
     }
@@ -55,7 +51,7 @@ public class ARBBufferObject {
     }
     static native void nglGenBuffersARB(int buffers_n, long buffers, long function_pointer);
 
-    /** Overloads glGenBuffersARB. */
+
     public static int glGenBuffersARB() {
         return ARBVertexBufferObject.glGenBuffersARB();
     }
