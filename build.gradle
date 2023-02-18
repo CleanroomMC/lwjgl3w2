@@ -1,0 +1,128 @@
+buildscript {
+    repositories {
+        maven { url "https://plugins.gradle.org/m2/" }
+        mavenCentral()
+    }
+    dependencies {
+        classpath files("/home/gba/workspace/shadow/build/libs/shadow-7.1.3-SNAPSHOT.jar")
+    }
+}
+
+apply plugin: 'com.github.johnrengelman.shadow'
+apply plugin: 'java'
+apply plugin: 'eclipse'
+
+
+group = 'org.lwjgl'
+//version = '3.2.3'
+//sourceCompatibility = 1.8
+//targetCompatibility = 1.8
+
+jar {
+
+}
+
+java.toolchain.languageVersion = JavaLanguageVersion.of(17)
+
+repositories {
+    mavenCentral()
+}
+
+shadowJar{
+    relocate 'org.lwjgl.', 'org.lwjgl3.'
+    relocate 'org.lwjglx.', 'org.lwjgl.'
+}
+
+
+dependencies {
+    //shadow fileTree(dir: 'libs', include: '*.jar')
+    //compileOnly fileTree(dir: 'libs', include: '*.jar')
+
+    implementation('org.lwjgl:lwjgl:3.3.1')
+    implementation('org.lwjgl:lwjgl-opengl:3.3.1')
+    implementation('org.lwjgl:lwjgl-openal:3.3.1')
+    implementation('org.lwjgl:lwjgl-glfw:3.3.1')
+    implementation('org.lwjgl:lwjgl-stb:3.3.1')
+    implementation('org.lwjgl:lwjgl-tinyfd:3.3.1')
+
+    project.ext.lwjglNatives = "natives-linux"
+    runtimeOnly "org.lwjgl:lwjgl::$lwjglNatives"
+    runtimeOnly "org.lwjgl:lwjgl-glfw::$lwjglNatives"
+    runtimeOnly "org.lwjgl:lwjgl-jemalloc::$lwjglNatives"
+    runtimeOnly "org.lwjgl:lwjgl-openal::$lwjglNatives"
+    runtimeOnly "org.lwjgl:lwjgl-opengl::$lwjglNatives"
+    runtimeOnly "org.lwjgl:lwjgl-stb::$lwjglNatives"
+    runtimeOnly "org.lwjgl:lwjgl-tinyfd::$lwjglNatives"
+
+    project.ext.lwjglNatives = "natives-linux-arm64"
+    runtimeOnly "org.lwjgl:lwjgl::$lwjglNatives"
+    runtimeOnly "org.lwjgl:lwjgl-glfw::$lwjglNatives"
+    runtimeOnly "org.lwjgl:lwjgl-jemalloc::$lwjglNatives"
+    runtimeOnly "org.lwjgl:lwjgl-openal::$lwjglNatives"
+    runtimeOnly "org.lwjgl:lwjgl-opengl::$lwjglNatives"
+    runtimeOnly "org.lwjgl:lwjgl-stb::$lwjglNatives"
+    runtimeOnly "org.lwjgl:lwjgl-tinyfd::$lwjglNatives"
+
+    project.ext.lwjglNatives = "natives-linux-arm32"
+    runtimeOnly "org.lwjgl:lwjgl::$lwjglNatives"
+    runtimeOnly "org.lwjgl:lwjgl-glfw::$lwjglNatives"
+    runtimeOnly "org.lwjgl:lwjgl-jemalloc::$lwjglNatives"
+    runtimeOnly "org.lwjgl:lwjgl-openal::$lwjglNatives"
+    runtimeOnly "org.lwjgl:lwjgl-opengl::$lwjglNatives"
+    runtimeOnly "org.lwjgl:lwjgl-stb::$lwjglNatives"
+    runtimeOnly "org.lwjgl:lwjgl-tinyfd::$lwjglNatives"
+
+    project.ext.lwjglNatives = "natives-macos"
+    runtimeOnly "org.lwjgl:lwjgl::$lwjglNatives"
+    runtimeOnly "org.lwjgl:lwjgl-glfw::$lwjglNatives"
+    runtimeOnly "org.lwjgl:lwjgl-jemalloc::$lwjglNatives"
+    runtimeOnly "org.lwjgl:lwjgl-openal::$lwjglNatives"
+    runtimeOnly "org.lwjgl:lwjgl-opengl::$lwjglNatives"
+    runtimeOnly "org.lwjgl:lwjgl-stb::$lwjglNatives"
+    runtimeOnly "org.lwjgl:lwjgl-tinyfd::$lwjglNatives"
+
+    project.ext.lwjglNatives = "natives-macos-arm64"
+    runtimeOnly "org.lwjgl:lwjgl::$lwjglNatives"
+    runtimeOnly "org.lwjgl:lwjgl-glfw::$lwjglNatives"
+    runtimeOnly "org.lwjgl:lwjgl-jemalloc::$lwjglNatives"
+    runtimeOnly "org.lwjgl:lwjgl-openal::$lwjglNatives"
+    runtimeOnly "org.lwjgl:lwjgl-opengl::$lwjglNatives"
+    runtimeOnly "org.lwjgl:lwjgl-stb::$lwjglNatives"
+    runtimeOnly "org.lwjgl:lwjgl-tinyfd::$lwjglNatives"
+
+    project.ext.lwjglNatives = "natives-windows"
+    runtimeOnly "org.lwjgl:lwjgl::$lwjglNatives"
+    runtimeOnly "org.lwjgl:lwjgl-glfw::$lwjglNatives"
+    runtimeOnly "org.lwjgl:lwjgl-jemalloc::$lwjglNatives"
+    runtimeOnly "org.lwjgl:lwjgl-openal::$lwjglNatives"
+    runtimeOnly "org.lwjgl:lwjgl-opengl::$lwjglNatives"
+    runtimeOnly "org.lwjgl:lwjgl-stb::$lwjglNatives"
+    runtimeOnly "org.lwjgl:lwjgl-tinyfd::$lwjglNatives"
+
+    project.ext.lwjglNatives = "natives-windows-arm64"
+    runtimeOnly "org.lwjgl:lwjgl::$lwjglNatives"
+    runtimeOnly "org.lwjgl:lwjgl-glfw::$lwjglNatives"
+    runtimeOnly "org.lwjgl:lwjgl-jemalloc::$lwjglNatives"
+    runtimeOnly "org.lwjgl:lwjgl-openal::$lwjglNatives"
+    runtimeOnly "org.lwjgl:lwjgl-opengl::$lwjglNatives"
+    runtimeOnly "org.lwjgl:lwjgl-stb::$lwjglNatives"
+    runtimeOnly "org.lwjgl:lwjgl-tinyfd::$lwjglNatives"
+
+    project.ext.lwjglNatives = "natives-windows-x86"
+    runtimeOnly "org.lwjgl:lwjgl::$lwjglNatives"
+    runtimeOnly "org.lwjgl:lwjgl-glfw::$lwjglNatives"
+    runtimeOnly "org.lwjgl:lwjgl-jemalloc::$lwjglNatives"
+    runtimeOnly "org.lwjgl:lwjgl-openal::$lwjglNatives"
+    runtimeOnly "org.lwjgl:lwjgl-opengl::$lwjglNatives"
+    runtimeOnly "org.lwjgl:lwjgl-stb::$lwjglNatives"
+    runtimeOnly "org.lwjgl:lwjgl-tinyfd::$lwjglNatives"
+
+    //implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    compileOnly 'org.apache.commons:commons-lang3:3.12.0'
+    compileOnly 'commons-io:commons-io:2.11.0'
+    compileOnly 'org.apache.logging.log4j:log4j-api:2.19.0'
+    compileOnly 'com.google.guava:guava:31.1-jre'
+    compileOnly 'com.google.code.findbugs:jsr305:3.0.2'
+}
+
