@@ -31,10 +31,10 @@ repositories {
 shadowJar{
     relocate 'org.lwjgl.', 'org.lwjgl3.'
     relocate 'org.lwjglx.', 'org.lwjgl.'
-    relocate('org.lwjgl', 'org.lwjgl3')
-    relocate 'linux.x64.org.lwjgl', 'org.lwjgl3'
-    relocate 'macos.x64.org.lwjgl', 'org.lwjgl3'
-    relocate 'windows.x64.org.lwjgl', 'org.lwjgl3'
+    relocate 'org.lwjgl', 'org.lwjgl3'
+    relocate 'linux.x64.org.lwjgl', 'linux.x64.org.lwjgl3'
+    relocate 'macos.x64.org.lwjgl', 'macos.x64.org.lwjgl3'
+    relocate 'windows.x64.org.lwjgl', 'windows.x64.org.lwjgl3'
     minimize {
         exclude '**/*sha1'
         exclude '**/*git'
