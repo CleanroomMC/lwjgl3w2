@@ -39,9 +39,10 @@ shadowJar{
     relocate 'windows.x64.org.lwjgl', 'org.lwjgl3'
     relocate 'windows.x86.org.lwjgl', 'org.lwjgl3'
     relocate 'windows.arm64.org.lwjgl', 'org.lwjgl3'
-
-    exclude '**/*.sha1'
-    exclude '**/*.git'
+    minimize {
+        exclude '**/*sha1'
+        exclude '**/*git'
+    }
 }
 
 
