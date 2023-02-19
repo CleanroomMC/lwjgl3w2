@@ -4,7 +4,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath files("/home/gba/workspace/shadow/build/libs/shadow-7.1.3-SNAPSHOT.jar")
+        classpath files("./shadow/shadow-7.1.3-SNAPSHOT.jar")
     }
 }
 
@@ -31,6 +31,17 @@ repositories {
 shadowJar{
     relocate 'org.lwjgl.', 'org.lwjgl3.'
     relocate 'org.lwjglx.', 'org.lwjgl.'
+    relocate 'linux.arm32.org.lwjgl', 'org.lwjgl3'
+    relocate 'linux.arm64.org.lwjgl', 'org.lwjgl3'
+    relocate 'linux.x64.org.lwjgl', 'org.lwjgl3'
+    relocate 'macos.arm64.org.lwjgl', 'org.lwjgl3'
+    relocate 'macos.x64.org.lwjgl', 'org.lwjgl3'
+    relocate 'windows.x64.org.lwjgl', 'org.lwjgl3'
+    relocate 'windows.x86.org.lwjgl', 'org.lwjgl3'
+    relocate 'windows.arm64.org.lwjgl', 'org.lwjgl3'
+
+    exclude '**/*.sha1'
+    exclude '**/*.git'
 }
 
 
