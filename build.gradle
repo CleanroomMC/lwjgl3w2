@@ -29,16 +29,7 @@ repositories {
 }
 
 shadowJar{
-    relocate 'org.lwjgl.', 'org.lwjgl3.'
-    relocate 'org.lwjglx.', 'org.lwjgl.'
-    relocate 'org.lwjgl', 'org.lwjgl3'
-    relocate 'linux.x64.org.lwjgl', 'linux.x64.org.lwjgl3'
-    relocate 'macos.x64.org.lwjgl', 'macos.x64.org.lwjgl3'
-    relocate 'windows.x64.org.lwjgl', 'windows.x64.org.lwjgl3'
-    minimize {
-        exclude '**/*sha1'
-        exclude '**/*git'
-    }
+
 }
 
 
@@ -46,38 +37,12 @@ dependencies {
     //shadow fileTree(dir: 'libs', include: '*.jar')
     //compileOnly fileTree(dir: 'libs', include: '*.jar')
 
-    implementation('org.lwjgl:lwjgl:3.3.1')
-    implementation('org.lwjgl:lwjgl-opengl:3.3.1')
-    implementation('org.lwjgl:lwjgl-openal:3.3.1')
-    implementation('org.lwjgl:lwjgl-glfw:3.3.1')
-    implementation('org.lwjgl:lwjgl-stb:3.3.1')
-    implementation('org.lwjgl:lwjgl-tinyfd:3.3.1')
-
-    project.ext.lwjglNatives = "natives-linux"
-    implementation "org.lwjgl:lwjgl::$lwjglNatives"
-    implementation "org.lwjgl:lwjgl-glfw::$lwjglNatives"
-    implementation "org.lwjgl:lwjgl-openal::$lwjglNatives"
-    implementation "org.lwjgl:lwjgl-opengl::$lwjglNatives"
-    implementation "org.lwjgl:lwjgl-stb::$lwjglNatives"
-    implementation "org.lwjgl:lwjgl-tinyfd::$lwjglNatives"
-
-
-    project.ext.lwjglNatives = "natives-macos"
-    implementation "org.lwjgl:lwjgl::$lwjglNatives"
-    implementation "org.lwjgl:lwjgl-glfw::$lwjglNatives"
-    implementation "org.lwjgl:lwjgl-openal::$lwjglNatives"
-    implementation "org.lwjgl:lwjgl-opengl::$lwjglNatives"
-    implementation "org.lwjgl:lwjgl-stb::$lwjglNatives"
-    implementation "org.lwjgl:lwjgl-tinyfd::$lwjglNatives"
-
-
-    project.ext.lwjglNatives = "natives-windows"
-    implementation "org.lwjgl:lwjgl::$lwjglNatives"
-    implementation "org.lwjgl:lwjgl-glfw::$lwjglNatives"
-    implementation "org.lwjgl:lwjgl-openal::$lwjglNatives"
-    implementation "org.lwjgl:lwjgl-opengl::$lwjglNatives"
-    implementation "org.lwjgl:lwjgl-stb::$lwjglNatives"
-    implementation "org.lwjgl:lwjgl-tinyfd::$lwjglNatives"
+    compileOnly('org.lwjgl:lwjgl:3.3.1')
+    compileOnly('org.lwjgl:lwjgl-opengl:3.3.1')
+    compileOnly('org.lwjgl:lwjgl-openal:3.3.1')
+    compileOnly('org.lwjgl:lwjgl-glfw:3.3.1')
+    compileOnly('org.lwjgl:lwjgl-stb:3.3.1')
+    compileOnly('org.lwjgl:lwjgl-tinyfd:3.3.1')
 
 
     //implementation fileTree(dir: 'libs', include: ['*.jar'])
