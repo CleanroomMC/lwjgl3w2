@@ -26,6 +26,10 @@ java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 
 repositories {
     mavenCentral()
+    maven {
+        name 'MinecraftForge'
+        url 'https://maven.minecraftforge.net/'
+    }
 }
 
 shadowJar{
@@ -44,7 +48,7 @@ dependencies {
     compileOnly('org.lwjgl:lwjgl-stb:3.3.1')
     compileOnly('org.lwjgl:lwjgl-tinyfd:3.3.1')
 
-
+    compileOnly 'com.paulscode:soundsystem:201809301515'
     //implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     compileOnly 'org.apache.commons:commons-lang3:3.12.0'
